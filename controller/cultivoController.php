@@ -132,5 +132,58 @@ if(isset($_GET['eliminar'])) {
     $stmt->close();
 }
 
+
+// METODO PARA NOTIFICAR AGRICULTOR
+if(isset($_GET['notificar'])) {
+    $id_cultivo = $_GET['notificar'];
+    
+    // Obtener información del cultivo y agricultor
+    $query = "SELECT c.nombre as cultivo, a.nombre as agricultor, a.email 
+              FROM cultivo c 
+              JOIN agricultor a ON c.id_agricultor = a.id_agricultor 
+              WHERE c.id_cultivo = ?";
+    
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $id_cultivo);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if($result->num_rows > 0) {
+        $data = $result->fetch_assoc();
+        $agricultor = $data['agricultor'];
+        $email = $data['email'];
+        $cultivo = $data['cultivo'];
+        
+        // Configurar correo
+        $asunto = "Recordatorio importante sobre tu cultivo";
+        $mensaje = "Hola $agricultor,\n\n";
+        $mensaje .= "Este es un recordatorio para que prestes atención a tu cultivo '$cultivo'.\n";
+        $mensaje .= "Por favor, revisa su estado y realiza las labores necesarias.\n\n";
+        $mensaje .= "Atentamente,\nEl equipo de gestión de cultivos";
+        
+        $headers = "From: no-reply@tusistema.com" . "\r\n";
+        
+        // Enviar correo
+        if(mail($email, $asunto, $mensaje, $headers)) {
+            echo "<script>
+                alert('✅ Recordatorio enviado con éxito.');
+                window.location.href = '../views/cultivos/listar.php';
+            </script>";
+        } else {
+            echo "<script>
+                alert('❌ Error al enviar el recordatorio.');
+                window.location.href = '../views/cultivos/listar.php';
+            </script>";
+        }
+    } else {
+        echo "<script>
+            alert('❌ No se encontró el cultivo o agricultor.');
+            window.location.href = '../views/cultivos/listar.php';
+        </script>";
+    }
+    
+    $stmt->close();
+}
+
 $conn->close();
 ?>

@@ -5,20 +5,20 @@ RF-02 El sistema debe permitir registrar información de herramientas y maquinar
 (referencia, estado, fecha de compra). LISTO
 
 RF-03 El sistema debe permitir registrar y gestionar el control de siembra (fechas,
-insumos usados, cantidades, ubicación), fotos.
+insumos usados, cantidades, ubicación), fotos. LISTO
 
 RF-04 El sistema debe enviar notificaciones automáticas a los agricultores sobre
 eventos importantes, como inicio de riego, aplicación de fertilizantes, o alertas de
-mantenimiento.
+mantenimiento. LISTO
 
 RF-05 El sistema debe enviar alertas por SMS o mensajes push, considerando que
 en zonas rurales puede haber baja conectividad.
 
 RF-06 El sistema debe permitir consultar, modificar y eliminar la información
-registrada.
+registrada. LISTO
 
 RF-07 El sistema debe permitir la gestión documental digital, incluyendo contratos,
-nóminas y otros documentos relevantes para los trabajadores agrícolas.
+nóminas y otros documentos relevantes para los trabajadores agrícolas. LISTO
 
 RF-08 El sistema debe permitir acceso móvil para que los agricultores puedan recibir
 notificaciones y consultar información desde dispositivos móviles.

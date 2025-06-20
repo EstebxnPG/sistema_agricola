@@ -1,0 +1,85 @@
+:root {
+        --verde-hoja: #5a8f3d;
+        --verde-oscuro: #3a5a2a;
+        --beige-tierra: #e6d5b8;
+        --marron-tronco: #8b5a2b;
+        --amarillo-trigo: #f5d742;
+    }
+    
+    nav {
+        background: linear-gradient(to right, var(--verde-oscuro), var(--verde-hoja));
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border-bottom: 3px solid var(--marron-tronco);
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        position: relative;
+        padding: 0.5rem 0;
+    }
+    
+    nav li::before {
+        content: "🌱"; /* Icono de semilla */
+        margin-right: 8px;
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    nav a:hover {
+        background-color: var(--amarillo-trigo);
+        color: var(--verde-oscuro);
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    nav a:hover::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 2px;
+        background-color: var(--amarillo-trigo);
+    }
+    
+    /* Efecto activo para la página actual */
+    nav a.active {
+        background-color: var(--beige-tierra);
+        color: var(--verde-oscuro);
+        font-weight: bold;
+    }
+    
+    /* Responsive para móviles */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        nav li {
+            margin: 0.3rem 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
