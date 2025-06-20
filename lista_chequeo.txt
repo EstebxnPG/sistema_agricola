@@ -1,5 +1,5 @@
 RF-01 El sistema debe permitir registrar información de colaboradores (identificación,
-nombre, cargo, contacto).
+nombre, cargo, contacto).  LISTO
 
 RF-02 El sistema debe permitir registrar información de herramientas y maquinaria
 (referencia, estado, fecha de compra).
