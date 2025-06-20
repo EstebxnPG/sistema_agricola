@@ -1,36 +1,49 @@
-<?php require_once '../../config/database.php'; ?>
+<?php require_once '../../config/database.php'; 
+// Obtener lista de agricultores para el select
+$agricultores = $conn->query("SELECT id_agricultor, nombre FROM agricultor ORDER BY nombre");
+?>
 
-<!-- VIEW - Para el registro de un nuevo agricultor. -->
+<!-- VIEW - Para el registro de un nuevo colaborador. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Agricultor</title>
+    <title>Crear Colaborador</title>
 </head>
 <body>
-    <h2>Registrar nuevo Agricultor</h2>
+    <h2>Registrar nuevo Colaborador</h2>
 
-    <form action="../../controller/agricultorController.php" method="POST">
+    <form action="../../controller/colaboradorController.php" method="POST">
 
-        <label for="">Nombre: </label>
+        <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" required> <br><br>
 
-        <label for="">Documento: </label>
+        <label for="documento">Documento: </label>
         <input type="text" name="documento" required> <br><br>
 
-        <label for="">Cargo: </label>
+        <label for="cargo">Cargo: </label>
         <input type="text" name="cargo" required> <br><br>
 
-        <label for="">Contacto: </label>
+        <label for="contacto">Contacto: </label>
         <input type="number" name="contacto" required> <br><br>
 
-        <label for="">Precio venta: </label>
-        <input type="number" name="precio_venta" id=""><br><br>
+        <label for="email">Email: </label>
+        <input type="email" step="0.01" name="email"><br><br>
 
-        <button type="submit" name="registrar_agricultor">CREAR</button>
+        <label for="id_agricultor">Agricultor: </label>
+        <select name="id_agricultor" required>
+            <option value="">Seleccione un agricultor</option>
+            <?php while($agricultor = $agricultores->fetch_assoc()): ?>
+                <option value="<?= $agricultor['id_agricultor'] ?>">
+                    <?= htmlspecialchars($agricultor['nombre']) ?>
+                </option>
+            <?php endwhile; ?>
+        </select><br><br>
+
+        <button type="submit" name="registrar_colaborador">CREAR</button>
     </form>
 
-    <p><a href="listar.php">Ver Productos</a></p>
+    <p><a href="listar.php">Ver Colaboradores</a></p>
 </body>
 </html>

@@ -7,7 +7,6 @@ if(isset($_POST['registrar_colaborador'])) {
     $documento = trim($_POST['documento']);
     $cargo = trim($_POST['cargo']);
     $contacto = trim($_POST['contacto']);
-    $precio_venta = trim($_POST['precio_venta']);
     $id_agricultor = trim($_POST['id_agricultor']);
 
     // Validación
@@ -20,8 +19,8 @@ if(isset($_POST['registrar_colaborador'])) {
     }
 
     // Insertar datos
-    $stmt = $conn->prepare("INSERT INTO colaborador (nombre, documento, cargo, contacto, precio_venta, id_agricultor) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssdi", $nombre, $documento, $cargo, $contacto, $precio_venta, $id_agricultor);
+    $stmt = $conn->prepare("INSERT INTO colaborador (nombre, documento, cargo, contacto, id_agricultor) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssdi", $nombre, $documento, $cargo, $contacto, $id_agricultor);
 
     if ($stmt->execute()) {
         echo "<script>
@@ -45,7 +44,6 @@ if(isset($_POST['editar_colaborador'])) {
     $documento = trim($_POST['documento']);
     $cargo = trim($_POST['cargo']);
     $contacto = trim($_POST['contacto']);
-    $precio_venta = trim($_POST['precio_venta']);
     $id_agricultor = trim($_POST['id_agricultor']);
 
     // Validación
@@ -57,8 +55,8 @@ if(isset($_POST['editar_colaborador'])) {
         exit;
     }
 
-    $stmt = $conn->prepare("UPDATE colaborador SET nombre = ?, documento = ?, cargo = ?, contacto = ?, precio_venta = ?, id_agricultor = ? WHERE id_colaborador = ?");
-    $stmt->bind_param("ssssdii", $nombre, $documento, $cargo, $contacto, $precio_venta, $id_agricultor, $id);
+    $stmt = $conn->prepare("UPDATE colaborador SET nombre = ?, documento = ?, cargo = ?, contacto = ?, id_agricultor = ? WHERE id_colaborador = ?");
+    $stmt->bind_param("sssdii", $nombre, $documento, $cargo, $contacto, $id_agricultor, $id);
 
     if ($stmt->execute()) {
         echo "<script>
