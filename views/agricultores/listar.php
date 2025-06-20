@@ -18,6 +18,7 @@ $resultado = $conn->query("SELECT * FROM agricultor ORDER BY id_agricultor DESC"
         <th>Documento</th>
         <th>contacto</th>
         <th>email</th>
+        <th>Acciones</th>
     </tr>
 
     <?php while($agricultor = $resultado->fetch_assoc()): ?>
@@ -28,8 +29,8 @@ $resultado = $conn->query("SELECT * FROM agricultor ORDER BY id_agricultor DESC"
             <td><?= $agricultor['contacto']  ?></td>
             <td><?= $agricultor['email'] ?></td>
             <td>
-                <a href="editar.php?id=<?= $producto['id'] ?>">Editar</a>
-                <a href="eliminar.php?id=<?= $producto['id'] ?>">Eliminar</a>
+                <a href="editar.php?id=<?= $agricultor['id_agricultor'] ?>">Editar</a>
+                <a href="eliminar.php?id=<?= $agricultor['id_agricultor'] ?>">Eliminar</a>
             </td>
         </tr>
     <?php endwhile; ?>
