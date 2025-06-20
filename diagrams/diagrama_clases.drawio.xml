@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0" version="27.1.3">
+  <diagram name="Diagrama de Clases - Sistema Agrícola" id="-W9x1RJW_LciFODsKsC2">
+    <mxGraphModel dx="2304" dy="2052" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-51" value="Agricultor&#xa;--------------------&#xa;+ id: int&#xa;+ nombre: String&#xa;+ documento: String&#xa;+ contacto: String&#xa;+ email: String" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="-140" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-52" value="Cultivo&#xa;--------------------&#xa;+ id: int&#xa;+ nombre: String&#xa;+ fechaSiembra: Date&#xa;+ ubicacion: String" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="-130" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-53" value="Evento&#xa;--------------------&#xa;+ id: int&#xa;+ tipo: String&#xa;+ fecha: Date&#xa;+ descripcion: String" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="-130" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-54" value="Notificacion&#xa;--------------------&#xa;+ id: int&#xa;+ mensaje: String&#xa;+ tipo: String&#xa;+ fechaEnvio: Date&#xa;+ estado: String" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="-140" width="180" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-55" value="Colaborador&#xa;--------------------&#xa;+ id: int&#xa;+ nombre: String&#xa;+ documento: String&#xa;+ cargo: String&#xa;+ contacto: String" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="220" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-56" value="HerramientaMaquinaria&#xa;--------------------&#xa;+ id: int&#xa;+ tipo: String&#xa;+ referencia: String&#xa;+ estado: String&#xa;+ fechaCompra: Date" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-57" value="InsumoUsado&#xa;--------------------&#xa;+ id: int&#xa;+ nombre: String&#xa;+ cantidad: double&#xa;+ unidad: String" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="250" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-58" value="Documento&#xa;--------------------&#xa;+ id: int&#xa;+ tipo: String&#xa;+ nombreArchivo: String&#xa;+ rutaArchivo: String&#xa;+ fechaSubida: Date" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="230" width="180" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-59" style="endArrow=block;html=1;" edge="1" parent="1" source="ciWA5dyZn7DDvUgdUkLE-51" target="ciWA5dyZn7DDvUgdUkLE-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-60" style="endArrow=block;html=1;" edge="1" parent="1" source="ciWA5dyZn7DDvUgdUkLE-52" target="ciWA5dyZn7DDvUgdUkLE-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-61" style="endArrow=block;html=1;" edge="1" parent="1" source="ciWA5dyZn7DDvUgdUkLE-53" target="ciWA5dyZn7DDvUgdUkLE-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-62" style="endArrow=block;html=1;" edge="1" parent="1" source="ciWA5dyZn7DDvUgdUkLE-51" target="ciWA5dyZn7DDvUgdUkLE-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-63" style="endArrow=block;html=1;" edge="1" parent="1" source="ciWA5dyZn7DDvUgdUkLE-51" target="ciWA5dyZn7DDvUgdUkLE-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-64" style="endArrow=block;html=1;" edge="1" parent="1" source="ciWA5dyZn7DDvUgdUkLE-52" target="ciWA5dyZn7DDvUgdUkLE-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-65" style="endArrow=block;html=1;" edge="1" parent="1" source="ciWA5dyZn7DDvUgdUkLE-51" target="ciWA5dyZn7DDvUgdUkLE-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciWA5dyZn7DDvUgdUkLE-66" value="DIAGRAMA DE CLASES" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="430" y="-250" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

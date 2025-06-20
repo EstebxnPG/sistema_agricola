@@ -1,0 +1,110 @@
+Organización de información.
+
+// CHATGPT - Le solicite a la IA, una división de las entidades para la construcción de mi diagrama.
+
+📦 Clases Principales del Sistema
+✅ Agricultor
+Atributos:
+idAgricultor: int
+nombre: String
+documento: String
+contacto: String
+email: String
+Relaciones:
+Tiene muchos Cultivo
+Tiene muchos Colaborador
+Recibe muchas Notificacion
+
+✅ Colaborador
+Atributos:
+idColaborador: int
+nombre: String
+documento: String
+cargo: String
+contacto: String
+Relaciones:
+Pertenece a un Agricultor
+
+✅ HerramientaMaquinaria
+Atributos:
+idHerramienta: int
+tipo: String
+referencia: String
+estado: String
+fechaCompra: Date
+Relaciones:
+Pertenece a un Agricultor
+
+✅ Cultivo
+Atributos:
+idCultivo: int
+nombreCultivo: String
+fechaSiembra: Date
+ubicacion: String
+Relaciones:
+Pertenece a un Agricultor
+Tiene muchos Evento
+Tiene muchos InsumoUsado
+Puede tener muchas Foto
+
+✅ Evento
+Atributos:
+idEvento: int
+tipoEvento: Enum (riego, fertilizacion, mantenimiento, etc.)
+fechaEvento: Date
+descripcion: String
+Relaciones:
+Pertenece a un Cultivo
+Genera una Notificacion
+
+✅ InsumoUsado
+Atributos:
+idInsumo: int
+nombre: String
+cantidad: double
+unidad: String
+
+Relaciones:
+Pertenece a un Cultivo
+
+✅ Notificacion
+Atributos:
+idNotificacion: int
+mensaje: String
+tipo: Enum (SMS, Push)
+fechaEnvio: Date
+estado: Enum (enviada, fallida)
+Relaciones:
+Se asocia a un Evento
+Se envía a un Agricultor
+
+✅ Documento
+Atributos:
+idDocumento: int
+tipo: String (contrato, nómina, etc.)
+nombreArchivo: String
+rutaArchivo: String
+fechaSubida: Date
+Relaciones:
+Pertenece a un Colaborador o Agricultor
+
+✅ Usuario
+(Si se requiere autenticación)
+
+Atributos:
+idUsuario: int
+nombreUsuario: String
+contraseña: String (encriptada)
+rol: Enum (administrador, agricultor, colaborador)
+Relaciones:
+Asociado a un Agricultor o administrador del sistema
+
+✅ Informe
+Atributos:
+idInforme: int
+tipo: String (semanal, mensual)
+fechaGeneracion: Date
+contenido: String o archivo
+Relaciones:
+Se genera a partir de datos de Cultivo, Evento, InsumoUsado
+
