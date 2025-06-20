@@ -1,3 +1,5 @@
+
+
 Organización de información.
 
 // CHATGPT - Le solicite a la IA, una división de las entidades para la construcción de mi diagrama.

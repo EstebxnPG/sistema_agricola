@@ -1,0 +1,35 @@
+RF-01 El sistema debe permitir registrar información de colaboradores (identificación,
+nombre, cargo, contacto).
+
+RF-02 El sistema debe permitir registrar información de herramientas y maquinaria
+(referencia, estado, fecha de compra).
+
+RF-03 El sistema debe permitir registrar y gestionar el control de siembra (fechas,
+insumos usados, cantidades, ubicación), fotos.
+
+RF-04 El sistema debe enviar notificaciones automáticas a los agricultores sobre
+eventos importantes, como inicio de riego, aplicación de fertilizantes, o alertas de
+mantenimiento.
+
+RF-05 El sistema debe enviar alertas por SMS o mensajes push, considerando que
+en zonas rurales puede haber baja conectividad.
+
+RF-06 El sistema debe permitir consultar, modificar y eliminar la información
+registrada.
+
+RF-07 El sistema debe permitir la gestión documental digital, incluyendo contratos,
+nóminas y otros documentos relevantes para los trabajadores agrícolas.
+
+RF-08 El sistema debe permitir acceso móvil para que los agricultores puedan recibir
+notificaciones y consultar información desde dispositivos móviles.
+
+RF-09- Visualización mediante gráficos y estadísticas: Representación gráfica de
+los datos para facilitar su interpretación.
+
+o Generación de informes personalizados: Posibilidad de filtrar y
+exportar datos según necesidades específicas.
+o Informes con rangos de tiempo: Opción de generar informes
+semanales, mensuales o de años anteriores para un mejor seguimiento
+del inventario.
+o Actualización en tiempo real: Acceso inmediato a información
+actualizada para una mejor toma de decisiones.
